@@ -1,5 +1,6 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
+const modal = document.querySelector('.modal-game-over')
 
 const jump = () => {
     mario.classList.add('jump');
@@ -7,6 +8,14 @@ const jump = () => {
     setTimeout(() => {
         mario.classList.remove('jump');
     }, 500)
+}
+
+const modalGameOver = function(){
+    modal.show();
+}
+
+const reiniciarGame = function(){
+    location.reload();
 }
 
 const loop = setInterval(()=> {
@@ -27,6 +36,7 @@ const loop = setInterval(()=> {
         mario.style.marginLeft = '50px';
 
         clearInterval(loop);
+        modalGameOver();
     }
 
 }, 10)
